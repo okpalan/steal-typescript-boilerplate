@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "module": "ES6",
+        "moduleResolution": "bundler",
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "rootDir": "src",
+        "typeRoots": [
+            "src/@types",
+        ],
+        "strict": true,
+        "allowImportingTsExtensions": true,
+    
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "include": [
+        "src"
+    ]
+}

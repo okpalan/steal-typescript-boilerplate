@@ -1,0 +1,60 @@
+{
+  "name": "soft-body-spring-text",
+  "version": "0.1.0",
+  "main": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "postinstall": "pnpm steal:build && pnpm steal:bundle",
+    "steal:build": "steal-tools build",
+    "steal:bundle": "steal-tools bundle",
+    "steal:reload": "steal-tools live-reload",
+    "serve": "http-server -c-1"
+  },
+  "steal": {
+    "config": "steal.config.js",
+    "main": "src/main.ts!steal-typescript",
+    "ext": {
+      "ts": "steal-typescript"
+    },
+    "meta": {
+      "typescript": {
+        "format": "global",
+        "exports": "ts"
+      },
+      "map": {
+        "dat.gui": "node_modules/dat.gui/build/dat.gui.module.js",
+        "mime": "node_modules/mime/lite.js"
+      },
+      "plugins": [
+        "steal-typescript",
+        "steal-css"
+      ]
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "mime": "^3.0.0",
+      "steal-css": "^1.3.2",
+      "steal-tools": "^2.3.0",
+      "steal-typescript": "^0.5.0",
+      "typescript": "^5.0.4",
+      "object-assign": "^4.1.1"
+    },
+    "dependencies": {
+      "dat.gui": "^0.7.9",
+      "http-server": "^14.1.1",
+      "steal": "^2.3.0"
+    }
+  },
+  "devDependencies": {
+    "object-assign": "^4.1.1",
+    "steal-tools": "^2.3.0",
+    "steal-typescript": "^0.5.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "steal": "^2.3.0"
+  }
+}
