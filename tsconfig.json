@@ -1,23 +1,30 @@
 {
     "compilerOptions": {
-        "noEmit": true,
-        "module": "ES6",
+        "noEmit": false,
+        "module": "ESNext",
+        "target": "ESNext",
         "moduleResolution": "bundler",
         "experimentalDecorators": true,
         "allowJs": true,
+        "outDir": "dist",
+        "lib": [
+            "ES2015",
+            "DOM",
+            "ES2017",
+            "DOM.Iterable"
+        ],
         "rootDir": "src",
         "typeRoots": [
-            "src/@types",
+            "src/@types"
         ],
         "strict": true,
-        "allowImportingTsExtensions": true,
-    
+        "downlevelIteration": true,
     },
     "exclude": [
         "node_modules",
         "dist"
     ],
     "include": [
-        "src"
+        "src/**/*"
     ]
 }

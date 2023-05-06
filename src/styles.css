@@ -3,11 +3,14 @@
     padding: 0;
     margin: 0;
 }
-html,body {
+
+html,
+body {
     width: 100vw;
     height: 100vh;
 }
-#softtext {
+
+#squishy-text {
     position: absolute;
     left: auto;
     top: auto;

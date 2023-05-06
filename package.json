@@ -1,17 +1,20 @@
 {
-  "name": "soft-body-spring-text",
+  "name": "squishy-text",
   "version": "0.1.0",
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
-    "postinstall": "pnpm steal:build && pnpm steal:bundle",
-    "steal:build": "steal-tools build",
-    "steal:bundle": "steal-tools bundle",
+    "purge": "rimraf ./node_modules",
+    "steal:build": "steal-tools build --target web optimize  --no-tree-shaking",
+    "steal:bundle": "steal-tools bundle  --no-tree-shaking",
+    "build": "tsc -P tsconfig.browser.json",
     "steal:reload": "steal-tools live-reload",
-    "serve": "http-server -c-1"
+    "steal:export": "steal-tools export   --global --no-tree-shaking --dest build",
+    "serve": "http-server  --cors -c-1",
+    "dev": "concurrently \"pnpm serve\" \"pnpm steal:reload\""
   },
   "steal": {
-    "config": "steal.config.js",
+    "baseURL": "./",
     "main": "src/main.ts!steal-typescript",
     "ext": {
       "ts": "steal-typescript"
@@ -28,10 +31,13 @@
       "plugins": [
         "steal-typescript",
         "steal-css"
+      ],
+      "configDependencies": [
+        "live-reload"
       ]
     },
     "keywords": [],
-    "author": "",
+    "author": "Nnamdi Michael Okpala",
     "license": "ISC",
     "devDependencies": {
       "mime": "^3.0.0",
@@ -48,7 +54,9 @@
     }
   },
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "object-assign": "^4.1.1",
+    "rimraf": "^5.0.0",
     "steal-tools": "^2.3.0",
     "steal-typescript": "^0.5.0",
     "typescript": "^5.0.4"
